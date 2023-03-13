@@ -5,11 +5,11 @@ public class StringCalculator {
         int sum = 0;
         if (arg.equals(""))
             sum = 0;
-        else if (arg.indexOf("-")!=-1) {
+        else if (arg.contains("-")) {
             throw new Exception("Negatives are not allowed!");
         } else {
-            String regex = ",|\n";
-            if(arg.indexOf("//")!=-1){
+            String regex = "[,\n]";
+            if(arg.contains("//")){
                 regex+=("|"+arg.charAt(2));
                 arg = arg.substring(3);
             }
